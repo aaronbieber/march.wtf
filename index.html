@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>What day of March is it?</title>
+
+    <style type="text/css">
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      div#content {
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 50%;
+      }
+
+      p {
+        font-size: 3em;
+      }
+
+      em {
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      div#footer {
+        position: fixed;
+        bottom: 0;
+        padding: 1em;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid #ccc;
+        background-color: #f8f8f8;
+      }
+    </style>
+  </head>
+  <body onload="javascript:update()">
+
+    <div id="content">
+      <p>Today is March <em id="days">?</em>.</p>
+    </div>
+
+    <div id="footer">Created by <a href="https://aaronbieber.com/technology" target="_blank">Aaron Bieber</a></div>
+
+    <script src="scripts/moment.min.js" language="javascript"></script>
+    <script language="javascript">
+     var diff = moment().diff(moment([2020, 2, 31]), 'days') + 31;
+
+     function update() {
+       document.getElementById('days').innerHTML = diff.toString();
+     }
+    </script>
+  </body>
+</html>
